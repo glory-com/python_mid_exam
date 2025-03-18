@@ -14,5 +14,4 @@ def recursive_digit_sum(a):
         #将整型转换为字符串
         a = str(ans)
 
-
     return int(a)
