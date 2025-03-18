@@ -5,14 +5,19 @@
 
 
 def list_median(input_list):
+    #如果列表为空，返回None
     if len(input_list) == 0:
         return None
 
+    #对列表排列
     input_list.sort()
 
+    #如果长度为奇数，在列表的位置为长度除以2
     if len(input_list) % 2 == 1:
         pos = len(input_list) // 2
         return input_list[pos]
+    
+    #如果长度是偶数，则列表位置为（（长度/2） + （长度/2-1）） / 2
     else:
         pos1 = len(input_list) // 2
         pos2 = pos1 - 1

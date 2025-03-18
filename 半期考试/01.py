@@ -10,8 +10,10 @@ def abstract_value(a):
     #检查是否是可以转换为浮点数的字符串
     elif isinstance(a, str):
         try:
+            #尝试转换为float类型，如果可以，返回浮点的绝对值
             num = float(a)
             return abs(num)
+        #如果类型错误，返回None
         except ValueError:
             return None
     else:
