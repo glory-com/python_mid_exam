@@ -5,10 +5,6 @@
 def simplified_zigzag(l):
     ans = [] #记录答案
 
-    #定义比较函数：排序规则，先排行列之和，再排行
-    def cmp(a) :
-        return(sum(a) , a[0])
-
     n = len(l[0])
 
     #检查矩阵是否合法
@@ -25,8 +21,7 @@ def simplified_zigzag(l):
             pos = [i , j]
             pos_list.append(pos)
 
-    #按照cmp函数排序
-    pos_list.sort(key = cmp)
+    pos_list.sort(key = lambda x : (sum(x) , x[0]))#定义比较函数：排序规则，先排行列之和，再排行
 
     #输出
     for i in pos_list :
