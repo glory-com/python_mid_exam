@@ -15,7 +15,14 @@ def total_ascend(h):
 
     return ans 
 
+#方法二：好方法
+def total_ascend(h):
+    h.append(0)#最后回到0点
+    h.insert(0 , 100000000000)#开始在无限高处
+    ans = 0 
 
-h = [100, 200, 150, 250]
+    for i in range(1 , len(h) - 1) :
+        if h[i] > h[i-1] and h[i] > h[i+1] : #只要是形成山峰形状的地方，ans+1
+            ans += 1 
 
-total_ascend(h)
+    return ans 
